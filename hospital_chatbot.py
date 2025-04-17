@@ -15,18 +15,18 @@ def book_appointment():
 
     dept = input("Enter department (Cardiology/Nephrology/General): ").title()
     if dept not in departments:
-        print("Invalid department.")
+        print("! Invalid department.")
         return
 
     print(f"Available doctors in {dept}: {', '.join(departments[dept])}")
     doctor = input("Choose doctor: ").strip()
     if doctor not in departments[dept]:
-        print(" Invalid doctor.")
+        print("! Invalid doctor.")
         return
 
     slot = input("Choose time (10 AM / 11:30 AM / 2 PM / 4 PM): ")
     if slot not in ["10 AM", "11:30 AM", "2 PM", "4 PM"]:
-        print(" Invalid time slot.")
+        print("! Invalid time slot.")
         return
 
     print(f" Appointment booked with {doctor} at {slot} in {dept} department.")

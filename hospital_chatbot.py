@@ -15,21 +15,21 @@ def book_appointment():
 
     dept = input("Enter department (Cardiology/Nephrology/General): ").title()
     if dept not in departments:
-        print("❌ Invalid department.")
+        print("Invalid department.")
         return
 
     print(f"Available doctors in {dept}: {', '.join(departments[dept])}")
     doctor = input("Choose doctor: ").strip()
     if doctor not in departments[dept]:
-        print("❌ Invalid doctor.")
+        print(" Invalid doctor.")
         return
 
     slot = input("Choose time (10 AM / 11:30 AM / 2 PM / 4 PM): ")
     if slot not in ["10 AM", "11:30 AM", "2 PM", "4 PM"]:
-        print("❌ Invalid time slot.")
+        print(" Invalid time slot.")
         return
 
-    print(f"✅ Appointment booked with {doctor} at {slot} in {dept} department.")
+    print(f" Appointment booked with {doctor} at {slot} in {dept} department.")
 
 def check_report_status():
     reports = {
@@ -39,7 +39,7 @@ def check_report_status():
     }
 
     pid = input("Enter your Patient ID (e.g., P111): ").upper()
-    status = reports.get(pid, "❌ Invalid Patient ID")
+    status = reports.get(pid, " Invalid Patient ID")
     print(f"📄 Report Status: {status}")
 
 def emergency_help():
@@ -54,9 +54,9 @@ def emergency_help():
     area = input("\nEnter your area (e.g., Madhapur): ").title().strip()
     hospital = emergency_map.get(area)
     if hospital:
-        print(f"\n🚨 Nearest Emergency Hospital: {hospital}")
+        print(f"\n Nearest Emergency Hospital: {hospital}")
     else:
-        print("\n❌ Sorry, no emergency hospital found for your area.")
+        print("\n Sorry, no emergency hospital found for your area.")
 
 def main():
     while True:
@@ -69,10 +69,10 @@ def main():
         elif choice == '3':
             emergency_help()
         elif choice == '4':
-            print("👋 Thank you for using SmartCare. Stay healthy!")
+            print(" Thank you for using SmartCare. Stay healthy!")
             break
         else:
-            print("❗ Invalid choice.")
+            print("! Invalid choice.")
 main()
 
 
